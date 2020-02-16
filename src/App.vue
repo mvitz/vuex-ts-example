@@ -21,7 +21,7 @@ export default class App extends Vue {
   }
 
   private onRefresh() {
-    message.refreshMessage();
+    message.refreshMessage("Refresh");
   }
 }
 </script>
