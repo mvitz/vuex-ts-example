@@ -1,8 +1,7 @@
 import {
-  Action,
   getModule,
   Module,
-  Mutation,
+  MutationAction,
   VuexModule
 } from "vuex-module-decorators";
 import { fetchMessage } from "./api";
@@ -17,18 +16,12 @@ import store from "@/store";
 class MessageModule extends VuexModule {
   message = "";
 
-  @Mutation
-  updateMessage(message: string) {
-    console.log(`updateMessage(${message})`);
-    this.message = message;
-  }
-
-  @Action({ commit: "updateMessage" })
+  @MutationAction
   async refreshMessage(param?: string) {
     console.log(`refreshMessage(${param})`);
     const message = await fetchMessage(param);
     console.log(`message=${message}`);
-    return message;
+    return { message };
   }
 }
 
