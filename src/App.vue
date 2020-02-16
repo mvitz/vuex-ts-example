@@ -8,6 +8,7 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import HelloWorld from "./components/HelloWorld.vue";
+import message from "./store/message";
 
 @Component({
   components: {
@@ -16,11 +17,11 @@ import HelloWorld from "./components/HelloWorld.vue";
 })
 export default class App extends Vue {
   private get message() {
-    return this.$store.state.message;
+    return message.message;
   }
 
   private onRefresh() {
-    this.$store.dispatch("refreshMessage");
+    message.refreshMessage();
   }
 }
 </script>
