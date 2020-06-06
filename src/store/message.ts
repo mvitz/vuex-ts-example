@@ -2,7 +2,7 @@ import {
   getModule,
   Module,
   MutationAction,
-  VuexModule
+  VuexModule,
 } from "vuex-module-decorators";
 import { fetchMessage } from "./api";
 import store from "@/store";
@@ -11,7 +11,7 @@ import store from "@/store";
   namespaced: true,
   name: "message",
   store,
-  dynamic: true
+  dynamic: true,
 })
 class MessageModule extends VuexModule {
   message = "";

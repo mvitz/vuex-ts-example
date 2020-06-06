@@ -13,7 +13,7 @@ export default class HelloWorld extends Vue {
   @Prop({ required: true }) private msg!: string;
   @Prop({ required: true }) private onRefresh!: () => void;
 
-  onClick() {
+  onClick(): void {
     console.log(`onClick()`);
     this.onRefresh();
   }

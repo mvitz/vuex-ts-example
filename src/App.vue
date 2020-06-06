@@ -12,8 +12,8 @@ import message from "./store/message";
 
 @Component({
   components: {
-    HelloWorld
-  }
+    HelloWorld,
+  },
 })
 export default class App extends Vue {
   private get message() {
